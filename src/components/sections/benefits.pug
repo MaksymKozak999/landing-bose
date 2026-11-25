@@ -1,0 +1,14 @@
+section#how-to-buy.section.benefits
+  .container
+    .grid.benefits__grid
+      h2.section-title.section-title--left.benefits__title
+        | Why buy direct
+        br
+        | from Bose
+
+      .benefits__content
+        ul.benefits__list
+          each benefit in siteData.benefits
+            li.benefits__item= benefit
+
+        p.benefits__description= siteData.benefitsDescription

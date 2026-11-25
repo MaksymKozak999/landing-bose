@@ -1,0 +1,22 @@
+include ../../mixins/picture
+
+section#categories.section.categories
+  .container
+    h2.section-title.categories__title
+      | Browse Bose
+      br
+      | products by category
+
+    .categories__list
+      each cat in siteData.categories
+        article.category(class=`category--${cat.layout}`)
+          .grid.category__photos
+            each imgName, idx in cat.images
+              .category__photo-wrap(
+                class=idx === 0 ? 'category__photo-wrap--first' : 'category__photo-wrap--second'
+              )
+                +picture(imgName, cat.title, 672, 320).category__image
+          h3.category__title= cat.title
+
+    .grid.categories__actions
+      a.button.categories__button(href='#contacts') View all

@@ -1,0 +1,53 @@
+section#contacts.section.contacts
+  .container
+    h2.section-title.contacts__title Contact us
+
+    .grid.contacts__grid
+      form.contacts__form(action='#contacts', method='post')
+        .field.contacts__field
+          label.visually-hidden(for='contact-name') Name
+          input#contact-name.field__input(
+            type='text',
+            name='name',
+            placeholder='Name',
+            autocomplete='name',
+            required
+          )
+
+        .field.contacts__field
+          label.visually-hidden(for='contact-email') Email
+          input#contact-email.field__input(
+            type='email',
+            name='email',
+            placeholder='Email',
+            autocomplete='email',
+            required
+          )
+
+        .field.contacts__field
+          label.visually-hidden(for='contact-message') Message
+          textarea#contact-message.field__input.field__input--textarea(
+            name='message',
+            placeholder='Message',
+            rows='5',
+            required
+          )
+
+        button.button.contacts__submit(type='submit') Send
+
+      address.contacts__info
+        .contacts__group
+          p.contacts__label Phone
+          a.contacts__value(href=siteData.phoneHref)= siteData.phoneDisplay
+
+        .contacts__group
+          p.contacts__label Email
+          a.contacts__value(href=`mailto:${siteData.email}`)= siteData.email
+
+        .contacts__group
+          p.contacts__label Address
+          a.contacts__value(href=siteData.mapUrl, target='_blank', rel='noopener noreferrer')
+            each line, index in siteData.addressLines
+              if index > 0
+                br
+              = line

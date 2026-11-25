@@ -1,0 +1,9 @@
+include ../../mixins/product-card
+
+section#recommended.section.recommended
+  .container
+    h2.section-title.recommended__title Recommended
+
+    .grid.recommended__list
+      each item in siteData.recommended
+        +productCard(item).recommended__item
