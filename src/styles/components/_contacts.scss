@@ -1,3 +1,73 @@
+@use '../abstracts/mixins' as *;
+
 @layer components {
-  /* component styles */
+  .contacts {
+    padding-bottom: 80px;
+
+    @include mq(tablet) {
+      padding-bottom: 120px;
+    }
+
+    &__grid {
+      row-gap: 48px;
+    }
+
+    &__form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      grid-column: 1 / -1;
+
+      @include mq(tablet) {
+        grid-column: 1 / 4;
+      }
+
+      @include mq(desktop) {
+        grid-column: 1 / 6;
+      }
+    }
+
+    &__submit {
+      margin-top: 16px;
+    }
+
+    &__info {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      grid-column: 1 / -1;
+      font-style: normal;
+
+      @include mq(tablet) {
+        grid-column: 4 / 7;
+      }
+
+      @include mq(desktop) {
+        grid-column: 8 / 11;
+      }
+    }
+
+    &__label {
+      margin-bottom: 8px;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 1.4;
+      color: #9fadc2;
+    }
+
+    &__value {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.4;
+      color: var(--color-text);
+      text-decoration: none;
+      transition: opacity 0.3s ease;
+
+      @include focus-ring;
+
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
 }

@@ -1,3 +1,26 @@
+@use '../abstracts/mixins' as *;
+
 @layer components {
-  /* component styles */
+  .section-title {
+    margin-bottom: 48px;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -1.5px;
+    color: var(--color-text);
+    text-align: center;
+
+    @include mq(tablet) {
+      margin-bottom: 64px;
+      font-size: 40px;
+    }
+
+    @include mq(desktop) {
+      font-size: 48px;
+    }
+
+    &--left {
+      text-align: left;
+    }
+  }
 }

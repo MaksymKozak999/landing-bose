@@ -1,3 +1,46 @@
+@use '../abstracts/mixins' as *;
+
 @layer components {
-  /* component styles */
+  .field {
+    &__input {
+      display: block;
+      width: 100%;
+      height: 48px;
+      padding: 14px 16px;
+      font-family: var(--font-main);
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 1.4;
+      color: var(--color-text);
+      background-color: var(--color-surface);
+      border: 1px solid transparent;
+      border-radius: 40px;
+      outline: none;
+      transition:
+        border-color 0.3s ease,
+        background-color 0.3s ease;
+
+      &::placeholder {
+        color: var(--color-placeholder);
+      }
+
+      &:hover {
+        border-color: var(--color-border-hover);
+      }
+
+      &:focus {
+        border-color: var(--color-text);
+      }
+
+      &:user-invalid {
+        border-color: var(--color-error);
+      }
+
+      &--textarea {
+        height: 148px;
+        resize: none;
+        border-radius: 16px;
+      }
+    }
+  }
 }
