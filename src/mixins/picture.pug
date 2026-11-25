@@ -1,0 +1,15 @@
+mixin picture(name, alt, width, height, lazy = true)
+  picture
+    source(srcset=`/images/${name}.avif`, type='image/avif')
+    source(srcset=`/images/${name}.webp`, type='image/webp')
+    if lazy
+      img(
+        src=`/images/${name}.jpg`,
+        alt=alt,
+        width=width,
+        height=height,
+        loading='lazy',
+        decoding='async'
+      )&attributes(attributes)
+    else
+      img(src=`/images/${name}.jpg`, alt=alt, width=width, height=height, decoding='async')&attributes(attributes)
