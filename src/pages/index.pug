@@ -2,14 +2,10 @@ extends ../layouts/main
 
 block variables
   -
-    const pageTitle = 'Keepsake — digital & branding agency';
-    const pageDescription = 'Keepsake is a digital and branding agency based in London.';
+    var pageTitle = 'Bose — The world shades. Your music shines.';
+    var pageDescription = 'Explore Bose headphones, portable Bluetooth speakers, and audio sunglasses.';
 
 block content
-  include ../components/sections/hero
-  include ../components/sections/works
-  include ../components/sections/cta
-  include ../components/sections/services
-  include ../components/sections/stats
-  include ../components/sections/clients
-  include ../components/sections/journal
+  include ../components/header
+  main
+    include ../components/sections/hero

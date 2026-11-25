@@ -1,7 +1,20 @@
+include ../../mixins/icon
+include ../../mixins/picture
+
 section.hero
-  .container
-    h1 We’re Keepsake, a digital &amp; branding agency
-    p Specializing in web design, poster, motion video, based in London. We love to turn ideas into beautiful things.
-    .hero__actions
-      +btn('See our works', '#works', 'primary')
-      +btn('Get in touch', '#contact', 'secondary')
+  .hero__bg
+    +picture(
+      'hero-desktop',
+      'Woman wearing silver Bose Noise Cancelling Headphones 700',
+      1440,
+      720,
+      true,
+    ).hero__image
+
+  .container.hero__inner
+    .hero__content
+      +icon('sound-waves', 63, 76).hero__waves
+      h1.hero__title
+        | The world shades.
+        br
+        | Your music shines.

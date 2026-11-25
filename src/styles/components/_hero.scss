@@ -1,3 +1,77 @@
+@use '../abstracts/mixins' as *;
+
 @layer components {
-  /* component styles */
+  .hero {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    min-height: 568px;
+    padding-top: 120px;
+    padding-bottom: 40px;
+    overflow: hidden;
+
+    @include mq(tablet) {
+      min-height: 840px;
+      padding-bottom: 40px;
+    }
+
+    @include mq(desktop) {
+      min-height: 720px;
+      padding-bottom: 64px;
+    }
+  }
+
+  .hero__bg {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+  }
+
+  .hero__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 62% center;
+
+    @include mq(tablet) {
+      object-position: 54% center;
+    }
+
+    @include mq(desktop) {
+      object-position: center center;
+    }
+  }
+
+  .hero__waves {
+    width: 32px;
+    height: 38px;
+    margin-bottom: 16px;
+
+    @include mq(tablet) {
+      width: 63px;
+      height: 76px;
+      margin-bottom: 40px;
+    }
+
+    @include mq(desktop) {
+      margin-bottom: 32px;
+    }
+  }
+
+  .hero__title {
+    font-size: 32px;
+    font-style: italic;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -1.5px;
+
+    @include mq(tablet) {
+      font-size: 40px;
+    }
+
+    @include mq(desktop) {
+      font-size: 48px;
+    }
+  }
 }

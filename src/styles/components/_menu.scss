@@ -1,3 +1,115 @@
+@use '../abstracts/mixins' as *;
+@use '../abstracts/variables' as *;
+
 @layer components {
-  /* component styles */
+  .menu {
+    position: fixed;
+    inset: 0;
+    z-index: 30;
+    overflow-y: auto;
+    pointer-events: none;
+    background-color: var(--color-menu-overlay);
+    opacity: 0;
+    transform: translateX(100%);
+    transition:
+      transform $transition-base,
+      opacity $transition-base;
+  }
+
+  .menu-toggle:checked ~ .menu {
+    pointer-events: auto;
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .menu__inner {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    padding-bottom: 40px;
+  }
+
+  .menu__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-block: 40px;
+
+    @include mq(tablet) {
+      padding-block: 52px;
+    }
+
+    @include mq(desktop) {
+      padding-block: 64px;
+    }
+  }
+
+  .menu__logo,
+  .menu__close {
+    display: inline-flex;
+    color: var(--color-text);
+    cursor: pointer;
+
+    @include focus-ring;
+  }
+
+  .menu__nav {
+    margin-top: 24px;
+
+    @include mq(tablet) {
+      margin-top: 32px;
+    }
+  }
+
+  .menu__list {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .menu__link {
+    display: inline-block;
+    padding-bottom: 8px;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-bottom: 1px solid transparent;
+    transition: border-color $transition-base;
+
+    &:hover,
+    &:focus-visible {
+      border-bottom-color: var(--color-text);
+    }
+
+    @include focus-ring;
+  }
+
+  .menu__contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 40px;
+  }
+
+  .menu__phone {
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 2px;
+
+    @include focus-ring;
+  }
+
+  .menu__call-link {
+    align-self: flex-start;
+    padding-bottom: 8px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--color-text);
+
+    @include focus-ring;
+  }
 }

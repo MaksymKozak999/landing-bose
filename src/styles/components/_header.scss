@@ -1,3 +1,104 @@
+@use '../abstracts/mixins' as *;
+@use '../abstracts/variables' as *;
+
 @layer components {
-  /* component styles */
+  .header {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 20;
+  }
+
+  .header__bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-block: 40px;
+
+    @include mq(tablet) {
+      padding-block: 52px;
+    }
+
+    @include mq(desktop) {
+      padding-block: 64px;
+    }
+  }
+
+  .header__logo {
+    display: inline-flex;
+    color: var(--color-text);
+
+    @include focus-ring;
+  }
+
+  .header__actions {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+
+    @include mq(tablet) {
+      gap: 32px;
+    }
+  }
+
+  .header__phone {
+    position: relative;
+    display: inline-flex;
+    gap: 12px;
+    align-items: center;
+    color: var(--color-text);
+
+    @include focus-ring;
+  }
+
+  .header__phone-number {
+    display: none;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity $transition-base;
+
+    @include mq(desktop) {
+      display: inline-block;
+    }
+  }
+
+  .header__phone:hover .header__phone-number,
+  .header__phone:focus-visible .header__phone-number {
+    opacity: 1;
+  }
+
+  .header__burger {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 5px;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+
+    @include focus-ring;
+  }
+
+  .header__burger-line {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: var(--color-text);
+    border-radius: 2px;
+    transition: width $transition-base;
+  }
+
+  .header__burger:hover .header__burger-line:first-child,
+  .header__burger:focus-visible .header__burger-line:first-child {
+    width: 16px;
+  }
+
+  .header__burger:hover .header__burger-line:last-child,
+  .header__burger:focus-visible .header__burger-line:last-child {
+    width: 12px;
+  }
 }
