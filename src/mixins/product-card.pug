@@ -1,0 +1,10 @@
+include picture
+
+mixin productCard(item)
+  article.product-card&attributes(attributes)
+    a.product-card__link(href=item.href)
+      .product-card__media
+        +picture(item.image, item.title, 324, 320).product-card__image
+      h3.product-card__title= item.title
+      p.product-card__category= item.category
+      p.product-card__price= item.price
