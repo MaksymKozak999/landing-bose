@@ -17,6 +17,7 @@
     }
 
     @include mq(desktop) {
+      height: 720px;
       min-height: 720px;
       padding-bottom: 64px;
     }
@@ -41,6 +42,10 @@
     @include mq(desktop) {
       object-position: center center;
     }
+  }
+
+  .hero__content {
+    max-width: 498px;
   }
 
   .hero__waves {
