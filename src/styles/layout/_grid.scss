@@ -1,16 +1,65 @@
-@use '../utils' as *;
+@use '../abstracts/mixins' as *;
 
-.container {
-  width: 100%;
-  max-width: rem(1100);
-  margin: 0 auto;
-  padding: 0 rem(20);
+@layer layout {
+  .container {
+    padding-inline: 20px;
 
-  @include mq(md) {
-    padding: 0 rem(40);
+    @include mq(tablet) {
+      padding-inline: 72px;
+    }
+
+    @include mq(desktop) {
+      max-width: 1020px;
+      padding-inline: 0;
+      margin-inline: auto;
+    }
   }
 
-  @include mq(lg) {
-    padding: 0 rem(90);
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 20px;
+
+    @include mq(tablet) {
+      grid-template-columns: repeat(6, 1fr);
+      column-gap: 24px;
+    }
+
+    @include mq(desktop) {
+      grid-template-columns: repeat(12, 1fr);
+    }
+
+    &--debug {
+      position: relative;
+
+      &::after {
+        position: fixed;
+        inset: 0;
+        z-index: 9999;
+        max-width: 1020px;
+        margin-inline: auto;
+        pointer-events: none;
+        content: '';
+        background: repeating-linear-gradient(
+          to right,
+          rgb(255 0 0 / 10%) 0,
+          rgb(255 0 0 / 10%) calc((100% - 20px) / 2),
+          transparent calc((100% - 20px) / 2),
+          transparent calc((100% - 20px) / 2 + 20px)
+        );
+      }
+    }
+  }
+
+  .section {
+    padding-block: 48px;
+
+    @include mq(tablet) {
+      padding-block: 60px;
+    }
+
+    @include mq(desktop) {
+      padding-block: 60px;
+    }
   }
 }

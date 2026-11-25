@@ -1,0 +1,30 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+@layer base {
+  :root {
+    --color-text: #{$color-text};
+    --color-bg: #{$color-bg};
+    --color-surface: #{$color-surface};
+    --color-placeholder: #{$color-placeholder};
+    --color-border-hover: #{$color-border-hover};
+    --color-btn-default: #{$color-btn-default};
+    --color-btn-pressed: #{$color-btn-pressed};
+    --color-menu-overlay: #{$color-menu-overlay};
+    --color-error: #{$color-error};
+    --font-main: #{$font-main};
+  }
+
+  body {
+    font-family: var(--font-main);
+    font-size: 16px;
+    line-height: 1.4;
+    color: var(--color-text);
+    background-color: var(--color-bg);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body:has(.menu-toggle:checked) {
+    overflow: hidden;
+  }
+}

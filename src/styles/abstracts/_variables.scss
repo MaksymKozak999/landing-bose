@@ -1,0 +1,40 @@
+$breakpoints: (
+  tablet: 744px,
+  desktop: 1260px,
+);
+$grid-config: (
+  mobile: (
+    columns: 2,
+    gutter: 20px,
+    margin: 20px,
+  ),
+  tablet: (
+    columns: 6,
+    gutter: 24px,
+    margin: 72px,
+  ),
+  desktop: (
+    columns: 12,
+    gutter: 24px,
+    max-width: 1020px,
+  ),
+);
+$font-main:
+  'Inter',
+  -apple-system,
+  blinkmacsystemfont,
+  'Segoe UI',
+  roboto,
+  sans-serif;
+$color-text: #292929;
+$color-bg: #fff;
+$color-surface: #f8f8fa;
+$color-placeholder: #7e7e83;
+$color-border-hover: #d5d7de;
+$color-btn-default: #292929;
+$color-btn-pressed: #111;
+$color-menu-overlay: #e8eff9;
+$color-error: #d93025;
+$radius-pill: 40px;
+$radius-input: 16px;
+$transition-base: 0.3s ease;

@@ -1,0 +1,21 @@
+@use 'sass:map';
+@use 'variables' as *;
+
+@mixin mq($breakpoint) {
+  $width: map.get($breakpoints, $breakpoint);
+
+  @if $width {
+    @media (min-width: $width) {
+      @content;
+    }
+  } @else {
+    @error "Unknown breakpoint `#{$breakpoint}`.";
+  }
+}
+
+@mixin focus-ring {
+  &:focus-visible {
+    outline: 2px solid var(--color-text);
+    outline-offset: 3px;
+  }
+}
