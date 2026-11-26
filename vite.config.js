@@ -2,8 +2,8 @@ import vituum from 'vituum';
 import pug from '@vituum/vite-plugin-pug';
 import path from 'path';
 
-export default {
-  base: '/landing-bose/',
+export default ({ command }) => ({
+  base: command === 'build' ? '/landing-bose/' : '/',
   plugins: [
     vituum({
       imports: {
@@ -21,4 +21,4 @@ export default {
       '@assets': path.resolve(import.meta.dirname, 'src/assets'),
     },
   },
-};
+});
