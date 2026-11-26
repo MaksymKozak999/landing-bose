@@ -112,4 +112,10 @@
 
     @include focus-ring;
   }
+
+  .header:has(.menu-toggle:focus-visible) .header__burger,
+  .header:has(.menu-toggle:focus-visible) .menu__close {
+    outline: 2px solid currentcolor;
+    outline-offset: 4px;
+  }
 }
