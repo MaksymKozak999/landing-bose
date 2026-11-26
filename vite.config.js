@@ -3,6 +3,7 @@ import pug from '@vituum/vite-plugin-pug';
 import path from 'path';
 
 export default {
+  base: './',
   plugins: [
     vituum({
       imports: {
