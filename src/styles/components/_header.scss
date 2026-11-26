@@ -92,13 +92,13 @@
     transition: width $transition-base;
   }
 
-  .header__burger:hover .header__burger-line:first-child,
-  .header__burger:focus-visible .header__burger-line:first-child {
+  .header__burger:hover .header__burger-line--top,
+  .header__burger:focus-visible .header__burger-line--top {
     width: 16px;
   }
 
-  .header__burger:hover .header__burger-line:last-child,
-  .header__burger:focus-visible .header__burger-line:last-child {
+  .header__burger:hover .header__burger-line--bottom,
+  .header__burger:focus-visible .header__burger-line--bottom {
     width: 12px;
   }
 }
